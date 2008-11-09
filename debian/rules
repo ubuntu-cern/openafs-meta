@@ -1,0 +1,76 @@
+#!/usr/bin/make -f
+#
+# debian/rules for openafs-meta
+#
+# GNU copyright 2008 Akos FROHNER <akos@frohner.hu>
+#
+
+META_VERSION=$(shell head -1 debian/changelog | sed 's/.*(\(.*\)).*/\1/')
+KERNEL_VERSION=$(shell echo $(META_VERSION) | cut -d. -f1-3)
+KERNEL_ABI=$(shell echo $(META_VERSION) | cut -d. -f4)
+KERNEL_ABI_VERSION=$(KERNEL_VERSION)-$(KERNEL_ABI)
+
+GENERIC_i386=generic
+GENERIC_amd64=generic
+GENERIC_ia64=itanium
+GENERIC_sparc=sparc64
+GENERIC_lpia=lpia
+# Since these can be 32-bit or 64-bit, there is no generic
+GENERIC_hppa=
+GENERIC_powerpc=
+
+GENERIC=$(value GENERIC_$(shell dpkg-architecture -qDEB_HOST_ARCH))
+GENERIC_DEP=$(if $(GENERIC),$(GENERIC),)
+
+SHELL := sh -e
+
+build:
+	dh_testdir
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+
+gencontrol_flags = -Vkernel-version=$(KERNEL_VERSION)
+gencontrol_flags += -Vkernel-abi-version=$(KERNEL_ABI_VERSION)
+gencontrol_flags += -Vgeneric-depends=$(GENERIC_DEP)
+
+# Build architecture-independent files here.
+binary-indep: debian/control install
+	dh_testdir
+	dh_testroot
+
+	dh_installdirs -i
+	dh_installdocs -i
+	dh_installchangelogs -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_gencontrol -i -- $(gencontrol_flags)
+	dh_md5sums -i
+	dh_builddeb -i
+
+# Build architecture-dependent files here.
+binary-arch: debian/control install
+	dh_testdir
+	dh_testroot
+
+	dh_installdirs -s
+	dh_installdocs -s
+	dh_installchangelogs -s
+	dh_compress -s
+	dh_fixperms -s
+	dh_installdeb -s
+	dh_gencontrol -s -- $(gencontrol_flags)
+	dh_md5sums -s
+	dh_builddeb -s
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary install
