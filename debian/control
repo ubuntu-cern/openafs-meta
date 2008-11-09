@@ -9,8 +9,17 @@ Package: openafs-modules-generic
 Architecture: i386 amd64
 Section: universe/net
 Priority: extra
-Depends: openafs-modules-${kernel-abi-version} (= ${binary:Version})
+Depends: openafs-modules-${kernel-abi-version}-generic
 Description: OpenAFS modules for generic kernel
  This package will always depend on the latest generic 
+ OpenAFS modules available.
+
+Package: openafs-modules-server
+Architecture: i386 amd64
+Section: universe/net
+Priority: extra
+Depends: openafs-modules-${kernel-abi-version}-server
+Description: OpenAFS modules for server kernel
+ This package will always depend on the latest server
  OpenAFS modules available.
 
