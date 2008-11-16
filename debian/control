@@ -3,7 +3,7 @@ Section: devel
 Priority: extra
 Maintainer: Ubuntu CERN Team <ubuntu-cern-bugs@ninsei.hu>
 Standards-Version: 3.7.2
-Build-Depends: dpkg (>= 1.13.19), debhelper (>= 3), linux-headers-generic (>= 2.6.24), linux-headers-server (>= 2.6.24), openafs-modules-source (>= 1.4.6), module-assistant (>= 0.10)
+Build-Depends: dpkg (>= 1.13.19), debhelper (>= 3)
 
 Package: openafs-modules-generic
 Architecture: i386 amd64

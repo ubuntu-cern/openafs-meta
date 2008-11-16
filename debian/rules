@@ -19,9 +19,6 @@ build:
 clean:
 	dh_testdir
 	dh_testroot
-	for flavour in $(KERNEL_FLAVOURS); do \
-		rm -rf debian/openafs-modules-$(KERNEL_ABI_VERSION)-$$flavour; \
-	done
 	dh_clean
 
 install: build
@@ -50,11 +47,6 @@ binary-indep: debian/control install
 binary-arch: debian/control install
 	dh_testdir
 	dh_testroot
-	for flavour in $(KERNEL_FLAVOURS); do \
-		mkdir -p debian/openafs-modules-$(KERNEL_ABI_VERSION)-$$flavour; \
-		module-assistant --userdir debian/openafs-modules-$(KERNEL_ABI_VERSION)-$$flavour --text-mode --kvers-list $(KERNEL_ABI_VERSION)-$$flavour build openafs; \
-		mv debian/openafs-modules-$(KERNEL_ABI_VERSION)-$$flavour/*.deb ..; \
-	done
 	dh_installdirs -s
 	dh_installdocs -s
 	dh_installchangelogs -s
