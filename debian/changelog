@@ -1,3 +1,9 @@
+openafs-meta (2.6.27-7.1) intrepid; urgency=low
+
+  * New metapackage for intrepid. 
+
+ -- Frohner Ákos <akos@frohner.hu>  Sun, 16 Nov 2008 01:47:27 +0100
+
 openafs-meta (2.6.24-21.2) hardy; urgency=low
 
   * Turned into an architecture independent package.
