@@ -1,3 +1,9 @@
+openafs-meta (2.6.24-21.2) hardy; urgency=low
+
+  * Turned into an architecture independent package.
+
+ -- Frohner Ákos <akos@frohner.hu>  Sun, 16 Nov 2008 01:21:28 +0100
+
 openafs-meta (2.6.24-21.1) hardy; urgency=low
 
   * Initial release.

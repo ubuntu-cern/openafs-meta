@@ -6,7 +6,7 @@ Standards-Version: 3.7.2
 Build-Depends: dpkg (>= 1.13.19), debhelper (>= 3)
 
 Package: openafs-modules-generic
-Architecture: i386 amd64
+Architecture: all
 Section: universe/net
 Priority: extra
 Depends: openafs-modules-${kernel-abi-version}-generic
@@ -15,7 +15,7 @@ Description: OpenAFS modules for generic kernel
  OpenAFS modules available.
 
 Package: openafs-modules-server
-Architecture: i386 amd64
+Architecture: all
 Section: universe/net
 Priority: extra
 Depends: openafs-modules-${kernel-abi-version}-server
