@@ -1,3 +1,9 @@
+openafs-meta (2.6.27-11.1) intrepid; urgency=low
+
+  * Upstream upgraded the kernel to 2.6.27-11.
+
+ -- Frohner Ákos <akos@frohner.hu>  Fri, 30 Jan 2009 09:38:30 +0100
+
 openafs-meta (2.6.27-9.1) intrepid; urgency=low
 
   * Upstream upgraded the kernel to 2.6.27-9. 
