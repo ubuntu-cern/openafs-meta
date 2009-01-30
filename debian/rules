@@ -9,6 +9,7 @@ META_VERSION=$(shell head -1 debian/changelog | sed 's/.*(\(.*\)).*/\1/')
 KERNEL_VERSION=$(shell echo $(META_VERSION) | cut -d- -f1)
 KERNEL_ABI=$(shell echo $(META_VERSION) | cut -d- -f2 | cut -d. -f1)
 KERNEL_ABI_VERSION=$(KERNEL_VERSION)-$(KERNEL_ABI)
+MODULE_NAME=openafs
 KERNEL_FLAVOURS=generic server
 
 SHELL := sh -e
@@ -19,6 +20,9 @@ build:
 clean:
 	dh_testdir
 	dh_testroot
+	for flavour in $(KERNEL_FLAVOURS); do \
+		rm -rf debian/$(MODULE_NAME)-modules-$(KERNEL_ABI_VERSION)-$$flavour; \
+	done
 	dh_clean
 
 install: build
@@ -47,6 +51,11 @@ binary-indep: debian/control install
 binary-arch: debian/control install
 	dh_testdir
 	dh_testroot
+	for flavour in $(KERNEL_FLAVOURS); do \
+		mkdir -p debian/$(MODULE_NAME)-modules-$(KERNEL_ABI_VERSION)-$$flavour; \
+		module-assistant --userdir debian/$(MODULE_NAME)-modules-$(KERNEL_ABI_VERSION)-$$flavour --text-mode --kvers-list $(KERNEL_ABI_VERSION)-$$flavour build $(MODULE_NAME); \
+		mv debian/$(MODULE_NAME)-modules-$(KERNEL_ABI_VERSION)-$$flavour/*.deb ..; \
+	done
 	dh_installdirs -s
 	dh_installdocs -s
 	dh_installchangelogs -s
