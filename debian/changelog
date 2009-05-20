@@ -1,3 +1,9 @@
+openafs-meta (2.6.27-14.1) intrepid; urgency=low
+
+  * Upstream upgraded the kernel to 2.6.27.14.18. 
+
+ -- Frohner Ákos <akos@frohner.hu>  Wed, 20 May 2009 18:47:19 +0200
+
 openafs-meta (2.6.27-11.2) intrepid; urgency=low
 
   * Also building the binary modules. 
