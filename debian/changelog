@@ -1,3 +1,9 @@
+openafs-meta (2.6.28-15.1) jaunty; urgency=low
+
+  * Upstream upgraded the kernel to 2.6.28-15 
+
+ -- Frohner Ákos <akos@frohner.hu>  Tue, 18 Aug 2009 15:02:49 +0200
+
 openafs-meta (2.6.28-14.1) jaunty; urgency=low
 
   * Upstream upgraded the kernel to 2.6.28-14 
