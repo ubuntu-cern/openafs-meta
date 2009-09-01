@@ -1,3 +1,11 @@
+openafs-meta (2.6.28-15.2) jaunty; urgency=low
+
+  * Added cern-linux-* metapackages to ensure that the 
+    OpenAFS binary modules and the kernel are upgraded
+    at the same time.
+
+ -- Frohner Ákos <akos@frohner.hu>  Tue, 01 Sep 2009 11:30:56 +0200
+
 openafs-meta (2.6.28-15.1) jaunty; urgency=low
 
   * Upstream upgraded the kernel to 2.6.28-15 
