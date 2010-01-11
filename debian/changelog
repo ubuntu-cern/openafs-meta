@@ -1,3 +1,15 @@
+openafs-meta (2.6.31-17.1) karmic; urgency=low
+
+  * Upstream upgraded the kernel to 2.6.31-17 
+
+ -- Frohner Ákos <akos@frohner.hu>  Mon, 11 Jan 2010 17:23:11 +0100
+
+openafs-meta (2.6.31-16.1) karmic; urgency=low
+
+  * Upgrade to karmic kernel 2.6.31-16.
+
+ -- Frohner Ákos <akos@frohner.hu>  Mon, 04 Jan 2010 00:30:03 +0100
+
 openafs-meta (2.6.28-15.2) jaunty; urgency=low
 
   * Added cern-linux-* metapackages to ensure that the 
