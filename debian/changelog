@@ -1,3 +1,9 @@
+openafs-meta (2.6.31-17.2) karmic; urgency=low
+
+  * Removed restricted modules, which was a legacy left from jaunty. 
+
+ -- Frohner Ákos <akos@frohner.hu>  Fri, 22 Jan 2010 16:19:51 +0100
+
 openafs-meta (2.6.31-17.1) karmic; urgency=low
 
   * Upstream upgraded the kernel to 2.6.31-17 

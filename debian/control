@@ -9,7 +9,7 @@ Package: cern-linux
 Architecture: i386 amd64
 Section: universe/metapackages
 Priority: optional
-Depends: cern-linux-image (= ${binary:Version}), cern-linux-restricted-modules (= ${binary:Version}), openafs-modules (= ${binary:Version})
+Depends: cern-linux-image (= ${binary:Version}), openafs-modules (= ${binary:Version})
 Description: Generic complete Linux kernel for CERN
  This package will always depend on the latest generic complete Linux kernel
  available, including the latest version of the OpenAFS modules.
@@ -22,15 +22,6 @@ Depends: linux-image-generic (= ${binary:Version})
 Description: Generic Linux kernel image for CERN
  This package will always depend on the latest generic Linux kernel image
  available.
-
-Package: cern-linux-restricted-modules
-Architecture: i386 amd64
-Section: restricted/metapackages
-Priority: optional
-Depends: linux-restricted-modules-generic (= ${binary:Version})
-Description: Generic Linux restricted modules for CERN
- This package will always depend on the latest generic Linux restricted
- modules available.
 
 Package: openafs-modules
 Architecture: i386 amd64
@@ -45,7 +36,7 @@ Package: cern-linux-generic
 Architecture: i386 amd64
 Section: universe/metapackages
 Priority: optional
-Depends: cern-linux-image-generic (= ${binary:Version}), cern-linux-restricted-modules-generic (= ${binary:Version}), openafs-modules-generic (= ${binary:Version})
+Depends: cern-linux-image-generic (= ${binary:Version}), openafs-modules-generic (= ${binary:Version})
 Description: Complete Generic Linux kernel for CERN
  This package will always depend on the latest complete generic Linux kernel
  available, including the latest OpenAFS modules.
@@ -58,15 +49,6 @@ Depends: linux-image-${kernel-abi-version}-generic, linux-firmware
 Description: Generic Linux kernel image for CERN
  This package will always depend on the latest generic kernel image
  available.
-
-Package: cern-linux-restricted-modules-generic
-Architecture: i386 amd64
-Section: restricted/metapackages
-Priority: optional
-Depends: linux-restricted-modules-${kernel-abi-version}-generic
-Description: Restricted Linux modules for generic kernels for CERN
- This package will always depend on the latest restricted modules available
- for generic kernels.
 
 Package: openafs-modules-generic
 Architecture: i386 amd64
@@ -81,7 +63,7 @@ Package: cern-linux-server
 Architecture: i386 amd64
 Section: universe/metapackages
 Priority: optional
-Depends: cern-linux-image-server (= ${binary:Version}), cern-linux-restricted-modules-server (= ${binary:Version}), openafs-modules-server (=${binary:Version})
+Depends: cern-linux-image-server (= ${binary:Version}), openafs-modules-server (=${binary:Version})
 Description: Complete Linux kernel on Server Equipment for CERN
  This package will always depend on the latest complete Linux kernel available
  for Server Equipment, including the latest OpenAFS modules.
@@ -94,15 +76,6 @@ Depends: linux-image-${kernel-abi-version}-server, linux-firmware
 Description: Linux kernel image on Server Equipment for CERN
  This package will always depend on the latest kernel image available
  for Server Equipment.
-
-Package: cern-linux-restricted-modules-server
-Architecture: i386 amd64
-Section: restricted/metapackages
-Priority: optional
-Depends: linux-restricted-modules-${kernel-abi-version}-server
-Description: Restricted Linux modules for server kernels for CERN
- This package will always depend on the latest restricted modules available
- for server kernels.
 
 Package: openafs-modules-server
 Architecture: i386 amd64
