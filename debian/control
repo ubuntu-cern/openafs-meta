@@ -3,7 +3,7 @@ Section: devel
 Priority: extra
 Maintainer: Ubuntu CERN Team <ubuntu-cern-bugs@ninsei.hu>
 Standards-Version: 3.7.2
-Build-Depends: dpkg (>= 1.13.19), debhelper (>= 3)
+Build-Depends: dpkg (>= 1.13.19), debhelper (>= 3), module-assistant, openafs-modules-source
 
 Package: cern-linux
 Architecture: i386 amd64

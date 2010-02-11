@@ -1,3 +1,9 @@
+openafs-meta (2.6.31-19.56) karmic; urgency=low
+
+  * Upstream upgraded the kernel to 2.6.31-19.56
+
+ --  KELEMEN Peter <Peter.Kelemen@gmail.com>  Thu, 11 Feb 2010 16:10:59 +0100
+
 openafs-meta (2.6.28-15.2) jaunty; urgency=low
 
   * Added cern-linux-* metapackages to ensure that the 
